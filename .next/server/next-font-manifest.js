@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/eri/selfstudy/portfolio/src/app/layout":["static/media/33656332ccf35e08-s.p.woff2","static/media/f2dba9fbcf2f771b-s.p.woff2","static/media/9cf9c6e84ed13b5e-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
