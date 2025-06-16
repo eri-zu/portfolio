@@ -7,7 +7,7 @@ const rawClientWorksData: Array<ClientWorks> = [
     href: "/",
     tags: ["Next.js", "TypeScript", "React Three Fiber", "glsl"],
     date: "2025",
-    gitLink: "",
+    gitLink: "https://github.com/eri-zu/portfolio/tree/main/htdocs",
   },
   {
     title: "Mr. Shigeta's Portfolio site",
