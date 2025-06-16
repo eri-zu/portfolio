@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
 
-  basePath: isProd ? "/portfolio/htdocs/out" : "",
-  assetPrefix: isProd ? "/portfolio/htdocs/out/" : "",
+  basePath: isProd ? "/portfolio" : "",
+  assetPrefix: isProd ? "/portfolio/" : "",
 
   images: {
     disableStaticImages: true,
