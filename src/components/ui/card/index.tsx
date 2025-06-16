@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import style from "./index.module.scss";
 import GitSVG from "../../../../svg/github-mark-white.svg";
-import { basePath } from "../../../../utils/basePath";
 import { Tag } from "../tag";
 
 import type { ClientWorks, Experiment } from "../../../types/works";
@@ -34,8 +33,8 @@ export const Card: React.FC<Props> = ({ data }) => {
           <Image
             src={
               data.type === "experiment"
-                ? `${basePath}/images/experiment/${data.name}.webp`
-                : `${basePath}/images/${data.name}.webp`
+                ? `/images/experiment/${data.name}.webp`
+                : `/images/${data.name}.webp`
             }
             fill
             alt={data.title}

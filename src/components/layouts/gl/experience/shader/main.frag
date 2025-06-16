@@ -6,6 +6,9 @@ uniform float uTime;
 uniform bool isBaseScanLine;
 uniform bool isGrainNoise;
 uniform bool isColorShift;
+uniform float uShift1;
+uniform float uShift2;
+uniform float uShift3;
 
 varying vec2 vUv;
 
@@ -43,9 +46,9 @@ void main() {
   }
 
   if(isColorShift) {
-    float shift1 = 0.04 * 0.15;
-    float shift2 = 0.01 * 0.15;
-    float shift3 = 0.03 * 0.15;
+    float shift1 = uShift1;
+    float shift2 = uShift2;
+    float shift3 = uShift3;
     float r = texture2D(uTexture, vUv + vec2(shift1, 0.0)).r;
     float g = texture2D(uTexture, vUv + vec2(shift3, 0.0)).g;
     float b = texture2D(uTexture, vUv + vec2(shift2, 0.0)).b;

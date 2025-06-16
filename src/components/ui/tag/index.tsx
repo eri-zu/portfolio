@@ -14,7 +14,7 @@ export const Tag: React.FC<Props> = ({ children }) => {
     <div
       className={classNames([
         style.tag,
-        children === "Next.js" && style.isWhite,
+        (children === "Next.js" || children === "TypeScript") && style.isWhite,
       ])}
     >
       <span className={style.tagText}>{children}</span>

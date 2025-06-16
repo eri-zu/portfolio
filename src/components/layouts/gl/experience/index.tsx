@@ -16,6 +16,8 @@ export const Experience: React.FC = () => {
   const materialRef = useRef<THREE.ShaderMaterial | null>(null);
   const mainRef = useRef<MainHandle | null>(null);
 
+  const ww = window.innerWidth;
+
   const FBOScene = useMemo(() => {
     const scene = new THREE.Scene();
     return scene;
@@ -44,6 +46,9 @@ export const Experience: React.FC = () => {
       isBaseScanLine: { value: true },
       isGrainNoise: { value: true },
       isColorShift: { value: true },
+      uShift1: { value: ww > 768 ? 0.04 * 0.16 : 0.04 * 0.45 },
+      uShift2: { value: ww > 768 ? 0.01 * 0.16 : 0.01 * 0.45 },
+      uShift3: { value: ww > 768 ? 0.03 * 0.16 : 0.03 * 0.45 },
     }),
     [fbo.texture]
   );

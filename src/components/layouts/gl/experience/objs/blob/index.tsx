@@ -19,7 +19,7 @@ export const Blob: React.FC = () => {
       const tl = gsap.timeline({ delay: 0.2 });
 
       const scale = blobVisible ? 1 : 0.3;
-      const y = blobVisible ? 1.5 : 2;
+      const y = blobVisible ? 1.4 : 2;
 
       tl
         //
@@ -66,7 +66,7 @@ export const Blob: React.FC = () => {
 
   return (
     <mesh
-      position={[0, 1.5, 4]}
+      position={[0, 1.4, 4]}
       // rotation-z={[-Math.PI * 0.1]}
       rotation-x={-Math.PI * 0.02}
       // rotation-x={Math.PI * 0.2}
