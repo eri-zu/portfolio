@@ -1,4 +1,6 @@
+import classNames from "classnames";
 import Image from "next/image";
+import { useState } from "react";
 
 import style from "./index.module.scss";
 import GitSVG from "../../../../svg/github-mark-white.svg";
@@ -12,6 +14,8 @@ type Props = {
 };
 
 export const Card: React.FC<Props> = ({ data }) => {
+  const [isEnter, setIsEnter] = useState<boolean>(false);
+
   return (
     <div className={style.card}>
       <div className={style.inner}>
@@ -20,6 +24,12 @@ export const Card: React.FC<Props> = ({ data }) => {
           href={data.href}
           target="_blank"
           rel="noopener noreferrer"
+          onMouseEnter={() => {
+            setIsEnter(true);
+          }}
+          onMouseLeave={() => {
+            setIsEnter(false);
+          }}
         >
           <Image
             src={
@@ -28,9 +38,12 @@ export const Card: React.FC<Props> = ({ data }) => {
                 : `${basePath}/images/${data.name}.webp`
             }
             fill
-            loading="eager"
             alt={data.title}
+            className={classNames([style.img, isEnter && style["--on"]])}
           />
+          <div
+            className={classNames([style.imgCover, isEnter && style["--on"]])}
+          ></div>
         </a>
 
         <div className={style.textArea}>

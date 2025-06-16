@@ -1,76 +1,118 @@
 @use "../../../styles/import" as *;
 
-.card {
-  width: 100%;
-}
-
-.imgLink {
-  display: block;
-  aspect-ratio: 6 / 3.5;
-  position: relative;
-  width: 100%;
-
-  img {
+@layer components {
+  .card {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
-}
 
-.textArea {
-  margin-top: 1rem;
-}
+  .imgLink {
+    display: block;
+    aspect-ratio: 6 / 3.5;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
 
-.title {
-  letter-spacing: 0.05em;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.titleArea {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-
-.gitIcon {
-  width: 1.8rem;
-  min-width: 1.8rem;
-  max-width: 1.8rem;
-  height: auto;
-  aspect-ratio: 98 / 96;
-  flex-shrink: 0;
-
-  a {
+  .img {
     display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform 0.6s;
+  }
 
-    svg {
+  .imgCover {
+    pointer-events: none;
+    background: #fff;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .textArea {
+    margin-top: 1rem;
+  }
+
+  .title {
+    letter-spacing: 0.05em;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .titleArea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .gitIcon {
+    width: 1.8rem;
+    min-width: 1.8rem;
+    max-width: 1.8rem;
+    height: auto;
+    aspect-ratio: 98 / 96;
+    flex-shrink: 0;
+
+    a {
+      display: block;
       width: 100%;
       height: 100%;
-    }
 
-    transition: opacity 0.4s $easeOutQuart 0s;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
 
-    &:hover {
-      opacity: 0.4;
+      @media (hover: hover) {
+        transition: opacity 0.4s $easeOutQuart 0s;
+        &:hover {
+          opacity: 0.4;
+        }
+      }
     }
+  }
+
+  .tagList {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .date {
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+
+    margin-top: 0.8rem;
+    line-height: 1;
   }
 }
 
-.tagList {
-  margin-top: 1rem;
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
+@layer utils {
+  @keyframes flash {
+    0% {
+      opacity: 1;
+    }
 
-.date {
-  font-size: 1.2rem;
-  letter-spacing: 0.1em;
+    to {
+      opacity: 0;
+    }
+  }
 
-  margin-top: 0.8rem;
-  line-height: 1;
+  .imgCover {
+    &.--on {
+      animation: flash 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal;
+    }
+  }
+
+  img {
+    &.--on {
+      transform: scale(1.03);
+    }
+  }
 }

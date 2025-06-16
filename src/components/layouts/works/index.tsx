@@ -1,7 +1,7 @@
 "use client";
 
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 import style from "./index.module.scss";
 import { AnimationSetShow } from "../../../../utils/animation";
@@ -22,25 +22,21 @@ export const Works: React.FC<Props> = ({ data, worksData }) => {
 
   const contentsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     AnimationSetShow();
 
     const tl = gsap.timeline();
+    setIsShow(true);
 
-    tl
-      //
-      .add(() => {
-        setIsShow(true);
-      })
-      .to(
-        contentsRef.current,
-        {
-          opacity: 1,
-          duration: 1.0,
-          ease: "power2.inOut",
-        },
-        0.1 * 3
-      );
+    tl.to(
+      contentsRef.current,
+      {
+        opacity: 1,
+        duration: 1.0,
+        ease: "power2.inOut",
+      },
+      0.1 * 3
+    );
   }, []);
 
   return (

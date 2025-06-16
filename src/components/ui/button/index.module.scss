@@ -11,7 +11,6 @@
     letter-spacing: 0.05em;
     background-color: rgba(255, 255, 255, 0.1);
 
-    transition: all 0.4s $easeOutQuart 0s;
     cursor: pointer;
 
     font-family: var(--font-en);
@@ -20,9 +19,13 @@
 
     white-space: nowrap;
 
-    &:hover {
-      background-color: var(--color-white);
-      color: #000;
+    @media (hover: hover) {
+      transition: all 0.4s $easeOutQuart 0s;
+
+      &:hover {
+        background-color: var(--color-white);
+        color: #000;
+      }
     }
   }
 }
