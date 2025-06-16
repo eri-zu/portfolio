@@ -1,0 +1,95 @@
+@use "./import" as *;
+
+@layer reset, base, components, utils;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  ::selection,
+  ::-moz-selection {
+    background-color: #999793;
+    color: #fff;
+  }
+
+  body,
+  img,
+  div,
+  p,
+  blockquote,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  li,
+  dl,
+  dt,
+  dd,
+  form,
+  fieldset,
+  textarea {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 100%;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    resize: none;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0;
+  }
+
+  button {
+    cursor: pointer;
+    display: block;
+  }
+}
+
+@layer base {
+  :root {
+    --color-black: #000;
+    --color-white: #fff;
+    --color-gray: #ccc;
+    --font-size: calc(10px / 76 * 100vh);
+  }
+
+  html {
+    font-family: var(--font-en2), var(--font-jp), sans-serif;
+    font-size: vh(10, 760);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    height: 100%;
+
+    overflow: hidden;
+  }
+
+  body {
+    height: 100%;
+  }
+}

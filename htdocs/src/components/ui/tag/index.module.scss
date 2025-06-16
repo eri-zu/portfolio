@@ -1,0 +1,31 @@
+@use "../../../styles/import" as *;
+
+@layer components {
+  .tag {
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    border: 1px solid var(--color-white);
+  }
+
+  .tagText {
+    font-size: 1rem;
+    color: var(--color-white);
+    letter-spacing: 0.05em;
+    font-family: var(--font-en);
+  }
+}
+
+@layer utils {
+  .tag {
+    &.isWhite {
+      background-color: var(--color-white);
+    }
+  }
+
+  .tagText {
+    .isWhite & {
+      font-weight: 500;
+      color: var(--color-black);
+    }
+  }
+}

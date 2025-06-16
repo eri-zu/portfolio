@@ -1,0 +1,37 @@
+@use "../../../styles/import" as *;
+
+@layer components {
+  .button {
+    display: block;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    font-size: 1.2rem;
+    border-radius: 999px;
+    padding: 1rem 2rem;
+    letter-spacing: 0.05em;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    transition: all 0.4s $easeOutQuart 0s;
+    cursor: pointer;
+
+    font-family: var(--font-en);
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    &:hover {
+      background-color: var(--color-white);
+      color: #000;
+    }
+  }
+}
+
+@layer utils {
+  .button {
+    &.--subLayer {
+      padding: 0.8rem 1.8rem;
+      font-size: 1.1rem;
+    }
+  }
+}
