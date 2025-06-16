@@ -50,7 +50,7 @@ export const Works: React.FC<Props> = ({ data, worksData }) => {
 
         <div
           className={style.contents}
-          style={{ opacity: 0 }}
+          style={{ opacity: 0.001 }}
           ref={contentsRef}
         >
           <ul className={style.list}>

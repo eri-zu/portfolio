@@ -53,7 +53,7 @@ export const TitleArea: React.FC<Props> = ({ data, isShow, subLayer }) => {
           ref={(el) => {
             setRefs(el, 0);
           }}
-          style={{ opacity: 0 }}
+          style={{ opacity: 0.001 }}
         >
           {data.title}
         </h1>
@@ -62,7 +62,7 @@ export const TitleArea: React.FC<Props> = ({ data, isShow, subLayer }) => {
           ref={(el) => {
             setRefs(el, 1);
           }}
-          style={{ opacity: 0 }}
+          style={{ opacity: 0.001 }}
           dangerouslySetInnerHTML={{ __html: data.descri }}
         ></p>
       </div>
@@ -72,7 +72,7 @@ export const TitleArea: React.FC<Props> = ({ data, isShow, subLayer }) => {
         ref={(el) => {
           setRefs(el, 2);
         }}
-        style={{ opacity: 0 }}
+        style={{ opacity: 0.001 }}
       >
         <Navigation data={data.navData} subLayer={subLayer}></Navigation>
       </div>
