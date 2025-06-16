@@ -32,18 +32,18 @@ const csp = `
 
 export const metadata: Metadata = {
   title: {
-    default: "portfolio",
-    template: "%s | portfolio",
+    default: "ERI IZUTSU Portfolio",
+    template: "%s | ERI IZUTSU Portfolio",
   },
-  description: "My personal portfolio showcasing projects.",
+  description: "A creative portfolio by ERI IZUTSU",
   openGraph: {
-    title: "portfolio",
-    description: "My personal portfolio showcasing projects.",
-    url: "https://eri-zu.github.io/portfolio/htdocs/out/",
-    siteName: "portfolio",
+    title: "ERI IZUTSU Portfolio",
+    description: "A creative portfolio by ERI IZUTSU",
+    url: "https://eri-zu.vercel.app/",
+    siteName: "ERI IZUTSU Portfolio",
     images: [
       {
-        url: "https://eri-zu.github.io/portfolio/htdocs/out/ogp.jpg", // OGP画像URL
+        url: "https://eri-zu.vercel.app/ogp.png",
         width: 1200,
         height: 630,
       },
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "portfolio",
-    description: "My personal portfolio showcasing projects.",
-    images: ["https://eri-zu.github.io/portfolio/htdocs/out/ogp.jpg"],
+    description: "A creative portfolio by ERI IZUTSU",
+    images: ["https://eri-zu.vercel.app/ogp.png"],
   },
   other: {
     "Strict-Transport-Security": `max-age=63072000; includeSubDomains; preload`,

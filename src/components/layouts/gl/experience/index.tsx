@@ -46,9 +46,9 @@ export const Experience: React.FC = () => {
       isBaseScanLine: { value: true },
       isGrainNoise: { value: true },
       isColorShift: { value: true },
-      uShift1: { value: ww > 768 ? 0.04 * 0.16 : 0.04 * 0.45 },
-      uShift2: { value: ww > 768 ? 0.01 * 0.16 : 0.01 * 0.45 },
-      uShift3: { value: ww > 768 ? 0.03 * 0.16 : 0.03 * 0.45 },
+      uShift1: { value: ww > 768 ? 0.04 * 0.15 : 0.04 * 0.45 },
+      uShift2: { value: ww > 768 ? 0.01 * 0.15 : 0.01 * 0.45 },
+      uShift3: { value: ww > 768 ? 0.03 * 0.15 : 0.03 * 0.45 },
     }),
     [fbo.texture]
   );

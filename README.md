@@ -12,7 +12,7 @@ This is a personal portfolio built with Next.js, TypeScript, React Three Fiber, 
 
 ## 🔗 Live Site
 
-https://eri-zu.github.io/portfolio/
+https://eri-zu.vercel.app/
 
 ## 📚 Reference
 

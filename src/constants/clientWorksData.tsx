@@ -4,7 +4,7 @@ const rawClientWorksData: Array<ClientWorks> = [
   {
     title: "My Portfolio site",
     name: "myportfolio",
-    href: "https://eri-zu.github.io/portfolio/",
+    href: "https://eri-zu.vercel.app/",
     tags: ["Next.js", "TypeScript", "React Three Fiber", "glsl"],
     date: "2025",
     gitLink: "https://github.com/eri-zu/portfolio",
