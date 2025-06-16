@@ -1,28 +1,24 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
-  // React Strict Modeで潜在的なバグを検出しやすく
   reactStrictMode: true,
-
-  // 出力形式を静的ファイルエクスポートに指定
   output: "export",
-
-  // URLの末尾にスラッシュを付与
   trailingSlash: true,
 
-  // 画像の静的最適化を無効
+  basePath: isProd ? "/portfolio/htdocs/out" : "",
+  assetPrefix: isProd ? "/portfolio/htdocs/out/" : "",
+
   images: {
     disableStaticImages: true,
     unoptimized: true,
   },
 
   compiler: {
-    // プロダクション環境ではコンソール出力を削除
     removeConsole:
       process.env.NODE_ENV === "production"
-        ? {
-            exclude: ["error", "warn"],
-          }
+        ? { exclude: ["error", "warn"] }
         : false,
   },
 
@@ -33,9 +29,7 @@ const nextConfig: NextConfig = {
           loaders: [
             {
               loader: "@svgr/webpack",
-              options: {
-                dimensions: false,
-              },
+              options: { dimensions: false },
             },
           ],
           as: "*.js",
@@ -44,7 +38,6 @@ const nextConfig: NextConfig = {
     },
   },
 
-  // webpackの設定を拡張
   webpack: (config) => {
     config.module.rules.push(
       {
@@ -52,9 +45,7 @@ const nextConfig: NextConfig = {
         use: [
           {
             loader: "@svgr/webpack",
-            options: {
-              dimensions: false,
-            },
+            options: { dimensions: false },
           },
         ],
       },
