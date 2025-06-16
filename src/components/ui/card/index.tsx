@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import style from "./index.module.scss";
 import GitSVG from "../../../../svg/github-mark-white.svg";
+import { basePath } from "../../../../utils/basePath";
 import { Tag } from "../tag";
 
 import type { ClientWorks, Experiment } from "../../../types/works";
@@ -23,8 +24,8 @@ export const Card: React.FC<Props> = ({ data }) => {
           <Image
             src={
               data.type === "experiment"
-                ? `/images/experiment/${data.name}.webp`
-                : `/images/${data.name}.webp`
+                ? `${basePath}/images/experiment/${data.name}.webp`
+                : `${basePath}/images/${data.name}.webp`
             }
             fill
             loading="eager"
@@ -37,7 +38,11 @@ export const Card: React.FC<Props> = ({ data }) => {
             <h2 className={style.title}>{data.title}</h2>
             {data.gitLink && (
               <div className={style.gitIcon}>
-                <a href={data.href} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={data.gitLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <GitSVG role="img" arial-label="GitHubへのリンク"></GitSVG>
                 </a>
               </div>

@@ -4,15 +4,15 @@
 
 This is a personal portfolio built with Next.js, TypeScript, React Three Fiber, and GLSL.
 
-- /experiment/
+- /experiment/  
   A collection of self-initiated works created for practice and skill development
 
-- /clientwork/
+- /clientwork/  
   A selection of professional projects I contributed to
 
 ## 🔗 Live Site
 
-https://eri-zu.github.io/portfolio/htdocs/out/
+https://eri-zu.github.io/portfolio/
 
 ## 📚 Reference
 

@@ -12,8 +12,8 @@ export const AnimationHide = (href: string, router: AppRouterInstance) => {
       //
       .to(wrap, {
         opacity: 0,
-        duration: 0.2,
-        ease: "power1.out",
+        duration: 0.15,
+        // ease: "power1.out",
         onComplete: () => {
           router.push(href);
         },
