@@ -5,7 +5,7 @@ const rawClientWorksData: Array<ClientWorks> = [
     title: "My Portfolio site",
     name: "myportfolio",
     href: "https://eri-zu.vercel.app/",
-    tags: ["Next.js", "TypeScript", "React Three Fiber", "glsl"],
+    tags: ["Next.js", "TypeScript", "React Three Fiber", "GLSL"],
     date: "2025",
     gitLink: "https://github.com/eri-zu/portfolio",
   },
@@ -20,7 +20,7 @@ const rawClientWorksData: Array<ClientWorks> = [
     title: "Mirror of Hythiol",
     name: "hythiol",
     href: "/videos/hythiol.mp4",
-    tags: ["Vanilla JS", "three.js", "glsl", "HTML / CSS"],
+    tags: ["Vanilla JS", "three.js", "GLSL", "HTML / CSS"],
     date: "2024",
   },
   {
