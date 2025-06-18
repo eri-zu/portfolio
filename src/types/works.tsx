@@ -1,19 +1,23 @@
-export type Experiment = {
-  type?: "experiment";
-  title: string;
-  name: string;
-  href: string;
-  gitLink?: string;
-  tags?: Array<string>;
-  date?: string;
+type Image = {
+  url: string;
+  height: number;
+  width: number;
 };
 
-export type ClientWorks = {
-  type?: "client";
+export type ExperimentType = {
+  type: string;
   title: string;
-  name: string;
+  image: Image;
+  href: string;
+  gitLink?: string;
+};
+
+export type ClientWorksType = {
+  type: string;
+  title: string;
+  image: Image;
   href: string;
   gitLink?: string;
   tags: Array<string>;
-  date: string;
+  year?: string;
 };

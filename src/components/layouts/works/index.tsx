@@ -9,12 +9,12 @@ import { Card } from "../../ui/card";
 import { TitleArea } from "../titleArea";
 
 import type { TitleAreaType } from "../../../types/titleAreaType";
-import type { Experiment, ClientWorks } from "../../../types/works";
+import type { ExperimentType, ClientWorksType } from "../../../types/works";
 import type React from "react";
 
 type Props = {
   data: TitleAreaType;
-  worksData: Array<Experiment | ClientWorks>;
+  worksData: Array<ExperimentType | ClientWorksType>;
 };
 
 export const Works: React.FC<Props> = ({ data, worksData }) => {

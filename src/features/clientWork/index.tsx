@@ -1,11 +1,15 @@
 "use client";
 
 import { Works } from "../../components/layouts/works";
-import { ClientWorksData } from "../../constants/clientWorksData";
 import { TitleAreaData } from "../../constants/titleAreaData";
 
+import type { ClientWorksType } from "../../types/works";
 import type React from "react";
 
-export const Index: React.FC = () => {
-  return <Works data={TitleAreaData[2]} worksData={ClientWorksData}></Works>;
+type Props = {
+  data: Array<ClientWorksType>;
+};
+
+export const Index: React.FC<Props> = ({ data }) => {
+  return <Works data={TitleAreaData[2]} worksData={data}></Works>;
 };

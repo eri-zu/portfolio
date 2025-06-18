@@ -6,10 +6,10 @@ import style from "./index.module.scss";
 import GitSVG from "../../../../svg/github-mark-white.svg";
 import { Tag } from "../tag";
 
-import type { ClientWorks, Experiment } from "../../../types/works";
+import type { ExperimentType, ClientWorksType } from "../../../types/works";
 import type React from "react";
 type Props = {
-  data: Experiment | ClientWorks;
+  data: ExperimentType | ClientWorksType;
 };
 
 export const Card: React.FC<Props> = ({ data }) => {
@@ -31,11 +31,7 @@ export const Card: React.FC<Props> = ({ data }) => {
           }}
         >
           <Image
-            src={
-              data.type === "experiment"
-                ? `/images/experiment/${data.name}.webp`
-                : `/images/${data.name}.webp`
-            }
+            src={data.image.url}
             fill
             alt={data.title}
             className={classNames([style.img, isEnter && style["--on"]])}
@@ -61,7 +57,7 @@ export const Card: React.FC<Props> = ({ data }) => {
             )}
           </div>
 
-          {data.tags && (
+          {data.type === "client" && "tags" in data && (
             <ul className={style.tagList}>
               {data.tags.map((el, i) => {
                 return (
@@ -73,7 +69,9 @@ export const Card: React.FC<Props> = ({ data }) => {
             </ul>
           )}
 
-          {data.date && <p className={style.date}>{data.date}</p>}
+          {data.type === "client" && "year" in data && (
+            <p className={style.date}>{data.year}</p>
+          )}
         </div>
       </div>
     </div>
