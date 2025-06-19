@@ -2,7 +2,7 @@
 
 ## 📝 Overview
 
-This is a personal portfolio built with Next.js, TypeScript, React Three Fiber, , GLSL and microCMS.
+This is a personal portfolio built with Next.js, TypeScript, React Three Fiber, GLSL and microCMS.
 
 - /experiment/  
   A collection of self-initiated works created for practice and skill development

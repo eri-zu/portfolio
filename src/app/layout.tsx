@@ -1,11 +1,7 @@
 import { randomBytes } from "crypto";
 
 import classNames from "classnames";
-import {
-  Big_Shoulders_Text,
-  Noto_Sans_JP,
-  Source_Sans_3,
-} from "next/font/google";
+import { Big_Shoulders_Text, Source_Sans_3 } from "next/font/google";
 
 import style from "./layout.module.scss";
 import { Footer } from "../components/layouts/footer";
@@ -30,20 +26,25 @@ const csp = `
   connect-src 'self' https:;
 `;
 
+const description =
+  "A portfolio by ERI IZUTSU, showcasing selected works and personal projects.";
+const title = "ERI IZUTSU Portfolio";
+const url = "https://eri-zu.vercel.app/";
+
 export const metadata: Metadata = {
   title: {
-    default: "ERI IZUTSU Portfolio",
+    default: title,
     template: "%s | ERI IZUTSU Portfolio",
   },
-  description: "A creative portfolio by ERI IZUTSU",
+  description: description,
   openGraph: {
-    title: "ERI IZUTSU Portfolio",
-    description: "A creative portfolio by ERI IZUTSU",
-    url: "https://eri-zu.vercel.app/",
-    siteName: "ERI IZUTSU Portfolio",
+    title: title,
+    description: description,
+    url: url,
+    siteName: title,
     images: [
       {
-        url: "https://eri-zu.vercel.app/ogp.png",
+        url: `${url}ogp.png`,
         width: 1200,
         height: 630,
       },
@@ -53,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "portfolio",
-    description: "A creative portfolio by ERI IZUTSU",
-    images: ["https://eri-zu.vercel.app/ogp.png"],
+    title: title,
+    description: description,
+    images: [`${url}ogp.png`],
   },
   other: {
     "Strict-Transport-Security": `max-age=63072000; includeSubDomains; preload`,
@@ -64,11 +65,6 @@ export const metadata: Metadata = {
     "Content-Security-Policy": `${csp.replace(/\n/g, "")}`,
   },
 };
-
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  variable: "--font-jp",
-});
 
 const sourceSans3 = Source_Sans_3({
   subsets: ["latin"],
@@ -88,11 +84,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={classNames([
-        notoSansJP.variable,
-        sourceSans3.variable,
-        bigShoulders.variable,
-      ])}
+      className={classNames([sourceSans3.variable, bigShoulders.variable])}
     >
       <body>
         <div className={style.wrapper}>
