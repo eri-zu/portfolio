@@ -6,9 +6,11 @@ import * as THREE from "three";
 import frag from "./shader/main.frag";
 import vert from "./shader/main.vert";
 import { random } from "../../../../../../../utils/math";
+import { useAnimationStore } from "../../../../../../stores/animationStore";
 
 export const Particles: React.FC = () => {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
+  const isAnimation = useAnimationStore((s) => s.isAnimation);
 
   const { positionArray, offsetArray, randomArray } = useMemo(() => {
     const num = 80 * 3;
@@ -50,9 +52,10 @@ export const Particles: React.FC = () => {
     []
   );
 
-  useFrame(({ clock }) => {
+  useFrame((state, delta) => {
+    if (!isAnimation) return;
     if (materialRef.current) {
-      materialRef.current.uniforms.uTime.value = clock.getElapsedTime();
+      materialRef.current.uniforms.uTime.value += delta;
     }
   });
 

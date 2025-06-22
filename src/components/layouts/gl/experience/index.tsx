@@ -25,9 +25,9 @@ export const Experience: React.FC = () => {
 
   const fbo = useFBO();
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     if (materialRef.current) {
-      materialRef.current.uniforms.uTime.value = state.clock.getElapsedTime();
+      materialRef.current.uniforms.uTime.value += delta;
     }
 
     if (mainRef.current && mainRef.current.camera) {

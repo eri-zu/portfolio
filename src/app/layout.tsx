@@ -6,6 +6,7 @@ import { Big_Shoulders_Text, Source_Sans_3 } from "next/font/google";
 import style from "./layout.module.scss";
 import { Footer } from "../components/layouts/footer";
 import { Gl } from "../components/layouts/gl";
+import { AnimationControlButton } from "../components/ui/animationControlButton";
 
 import type { Metadata } from "next";
 import type React from "react";
@@ -93,6 +94,7 @@ export default function RootLayout({
             <main className={style.main}>
               <div className={style.mainInner}>{children}</div>
             </main>
+            <AnimationControlButton></AnimationControlButton>
             <Footer />
           </div>
         </div>

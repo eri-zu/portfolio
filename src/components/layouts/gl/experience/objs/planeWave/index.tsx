@@ -5,16 +5,19 @@ import * as THREE from "three";
 
 import frag from "./shader/main.frag";
 import vert from "./shader/main.vert";
+import { useAnimationStore } from "../../../../../../stores/animationStore";
 
 import type React from "react";
 
 export const PlaneWave: React.FC = () => {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const meshRef = useRef<THREE.Mesh>(null);
+  const isAnimation = useAnimationStore((s) => s.isAnimation);
 
-  useFrame(({ clock }) => {
+  useFrame((state, delta) => {
+    if (!isAnimation) return;
     if (materialRef.current) {
-      materialRef.current.uniforms.uTime.value = clock.getElapsedTime();
+      materialRef.current.uniforms.uTime.value += delta;
     }
   });
 
@@ -36,9 +39,9 @@ export const PlaneWave: React.FC = () => {
       tl
         //
         .to(materialRef.current.uniforms.uBrightness.value, {
-          x: 0.6,
-          y: 0.6,
-          z: 0.6,
+          x: 0.5,
+          y: 0.5,
+          z: 0.5,
           duration: 1.2,
           ease: "power2.out",
         })
