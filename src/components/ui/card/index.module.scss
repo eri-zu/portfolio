@@ -11,6 +11,9 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0);
+
+    transition: border-color 0.6s $easeOutQuint 0s;
   }
 
   .img {
@@ -19,7 +22,7 @@
     height: 100%;
     object-fit: cover;
     will-change: transform;
-    transition: transform 0.6s;
+    transition: transform 0.6s $easeOutQuint 0s;
   }
 
   .imgCover {
@@ -103,6 +106,13 @@
   img {
     &.--on {
       transform: scale(1.03);
+    }
+  }
+
+  .imgLink {
+    &.--on {
+      transition: none;
+      border-color: var(--color-white);
     }
   }
 }

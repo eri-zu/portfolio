@@ -19,7 +19,7 @@ export const Card: React.FC<Props> = ({ data }) => {
     <div className={style.card}>
       <div className={style.inner}>
         <a
-          className={style.imgLink}
+          className={classNames([style.imgLink, isEnter && style["--on"]])}
           href={data.href}
           target="_blank"
           rel="noopener noreferrer"
