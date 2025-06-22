@@ -28,10 +28,9 @@ void main() {
   float brightnessX = 1.0 - smoothstep(0.0, 5.0, abs(vPosition.x));
   float posY = smoothstep(-2.0, 100.0, vPosition.y);
 
-  float edgeFadeX = smoothstep(0.0, 0.5, vUv.x) * smoothstep(1.0, 0.5, vUv.x);
+  float edgeFadeX = smoothstep(4.0, 2.0, vPosition.x) * smoothstep(-4.0, -2.0, vPosition.x);
   float edgeFadeY = smoothstep(0.0, 0.5, vUv.y) * smoothstep(1.0, 0.5, vUv.y);
   float edgeFade = edgeFadeX * edgeFadeY;
-
 
   vec3 brightness = uBrightness; 
   vec3 contrast = uContrast;

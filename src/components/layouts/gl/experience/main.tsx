@@ -1,4 +1,4 @@
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
 import { forwardRef, useImperativeHandle, useRef } from "react";
 
 import { Blob } from "./objs/blob";
@@ -27,7 +27,7 @@ export const Main = forwardRef<MainHandle>((_, ref) => {
 
   return (
     <group>
-      <OrbitControls camera={FBOcamera.current!} />
+      {/* <OrbitControls camera={FBOcamera.current!} /> */}
       {/* <primitive object={new THREE.AxesHelper(5)}></primitive> */}
       <PerspectiveCamera
         makeDefault

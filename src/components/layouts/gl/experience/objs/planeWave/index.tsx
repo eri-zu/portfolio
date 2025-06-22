@@ -39,16 +39,16 @@ export const PlaneWave: React.FC = () => {
       tl
         //
         .to(materialRef.current.uniforms.uBrightness.value, {
-          x: 0.5,
-          y: 0.5,
-          z: 0.5,
+          x: 0.4,
+          y: 0.4,
+          z: 0.4,
           duration: 1.2,
           ease: "power2.out",
         })
         .to(
           materialRef.current.uniforms.uContrast.value,
           {
-            x: 0.5,
+            x: 0.4,
             y: 0.5,
             z: 0.5,
             duration: 1.2,
