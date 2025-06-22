@@ -50,7 +50,7 @@ export const Card: React.FC<Props> = ({ data }) => {
                   href={data.gitLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  arial-label="GitHubへのリンク"
+                  aria-label="View project on GitHub"
                 >
                   <GitSVG role="img"></GitSVG>
                 </a>
