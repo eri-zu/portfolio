@@ -4,6 +4,8 @@ import { Index } from "../../features/experiment/index";
 import type { ExperimentType } from "../../types/works";
 import type React from "react";
 
+// console.log();
+
 export default async function Experiment() {
   const rawData = await client.get({
     endpoint: "experiment",
