@@ -14,13 +14,7 @@ export const AnimationControlButton: React.FC = () => {
   };
 
   return (
-    <button
-      type="button"
-      className={style.button}
-      onClick={() => {
-        onClick();
-      }}
-    >
+    <button type="button" className={style.button} onClick={onClick}>
       <svg
         viewBox="0 0 50 50"
         fill="none"
