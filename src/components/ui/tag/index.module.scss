@@ -15,17 +15,17 @@
   }
 }
 
-@layer utils {
-  .tag {
-    &.isWhite {
-      background-color: var(--color-white);
-    }
-  }
+// @layer utils {
+//   .tag {
+//     &.isWhite {
+//       background-color: var(--color-white);background-color
+//     }
+//   }
 
-  .tagText {
-    .isWhite & {
-      font-weight: 500;
-      color: var(--color-black);
-    }
-  }
-}
+//   .tagText {
+//     .isWhite & {
+//       font-weight: 500;font-weightfont-weight
+//       color: var(--color-black);colorcolor
+//     }
+//   }
+// }
