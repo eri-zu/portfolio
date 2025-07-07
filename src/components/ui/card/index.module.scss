@@ -42,7 +42,7 @@
 
   .title {
     letter-spacing: 0.05em;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 500;
   }
 
@@ -65,16 +65,27 @@
       display: block;
       width: 100%;
       height: 100%;
+      position: relative;
+      border-radius: 50%;
+      transition: all 0.2s $easeOutQuart 0s;
 
       svg {
         width: 100%;
         height: 100%;
+
+        path {
+          fill: #ffffffb3;
+          transition: all 0.2s $easeOutQuart 0s;
+        }
       }
 
       @media (hover: hover) {
-        transition: opacity 0.4s $easeOutQuart 0s;
         &:hover {
-          opacity: 0.4;
+          box-shadow: 0 0 2rem #fff;
+
+          path {
+            fill: #fff;
+          }
         }
       }
     }

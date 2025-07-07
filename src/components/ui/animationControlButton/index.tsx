@@ -24,13 +24,13 @@ export const AnimationControlButton: React.FC = () => {
       >
         {isAnimation ? (
           <g>
-            <rect x="18.5" y="16" width="4" height="19" rx="2" fill="#000" />
-            <rect x="27.5" y="16" width="4" height="19" rx="2" fill="#000" />
+            <rect x="18.5" y="16" width="4" height="19" rx="2" fill="#fff" />
+            <rect x="27.5" y="16" width="4" height="19" rx="2" fill="#fff" />
           </g>
         ) : (
           <path
             d="M32.2664 24.1103C32.991 24.4822 32.991 25.5178 32.2664 25.8897L21.9566 31.1807C21.2911 31.5222 20.5 31.039 20.5 30.291L20.5 19.709C20.5 18.961 21.2911 18.4778 21.9566 18.8193L32.2664 24.1103Z"
-            fill="#000"
+            fill="#fff"
           />
         )}
       </svg>
