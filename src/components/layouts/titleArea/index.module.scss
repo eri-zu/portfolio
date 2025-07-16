@@ -14,14 +14,15 @@
   .lead {
     margin-top: 2.4rem;
 
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 2;
     letter-spacing: 0.05em;
     font-weight: 300;
     font-family: var(--font-en);
 
     @include media-max("sp-s") {
-      font-size: 1.4rem;
+      // font-size: 1.4rem;
+      line-height: 1.5;
     }
   }
 
@@ -40,10 +41,10 @@
   .lead {
     &.--subLayer {
       margin-top: 2rem;
-      font-size: 1.3rem;
+      font-size: 1.6rem;
 
       @include media-max("sp-s") {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
       }
     }
   }
