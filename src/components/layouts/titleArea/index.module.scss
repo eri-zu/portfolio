@@ -21,7 +21,6 @@
     font-family: var(--font-en);
 
     @include media-max("sp-s") {
-      // font-size: 1.4rem;
       line-height: 1.5;
     }
   }
@@ -34,24 +33,7 @@
 @layer utils {
   .title {
     &.--subLayer {
-      font-size: 2rem;
-    }
-  }
-
-  .lead {
-    &.--subLayer {
-      margin-top: 2rem;
-      font-size: 1.6rem;
-
-      @include media-max("sp-s") {
-        font-size: 1.5rem;
-      }
-    }
-  }
-
-  .navArea {
-    &.--subLayer {
-      margin-top: 3.6rem;
+      font-size: 2.4rem;
     }
   }
 }

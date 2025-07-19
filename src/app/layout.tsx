@@ -91,10 +91,10 @@ export default function RootLayout({
         <div className={style.wrapper}>
           <div className={style.inner}>
             <Gl></Gl>
+            <AnimationControlButton></AnimationControlButton>
             <main className={style.main}>
               <div className={style.mainInner}>{children}</div>
             </main>
-            <AnimationControlButton></AnimationControlButton>
             <Footer />
           </div>
         </div>

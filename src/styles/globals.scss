@@ -67,6 +67,10 @@
   button {
     display: block;
   }
+
+  * {
+    outline-offset: 0.4rem;
+  }
 }
 
 @layer base {

@@ -1,8 +1,8 @@
 @use "../../../styles/import" as *;
 
 .button {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 4rem;
+  height: 4rem;
   position: fixed;
   top: 2rem;
   right: 2rem;
@@ -37,6 +37,10 @@
       path {
         fill: var(--color-black);
       }
+    }
+
+    &:active {
+      transform: scale(0.93);
     }
   }
 }

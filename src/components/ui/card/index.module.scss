@@ -9,11 +9,11 @@
         .imgCover {
           animation: flash 1.2s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal;
         }
-      
+
         img {
           transform: scale(1.03);
         }
-      
+
         .imgLink {
           transition: none;
           border-color: var(--color-white);
@@ -54,13 +54,21 @@
   }
 
   .textArea {
-    margin-top: 1rem;
+    margin-top: 1.4rem;
+
+    @include media-max("sp") {
+      margin-top: 1rem;
+    }
   }
 
   .title {
     letter-spacing: 0.05em;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 500;
+
+    @include media-max("sp") {
+      font-size: 1.6rem;
+    }
   }
 
   .titleArea {
@@ -71,12 +79,18 @@
   }
 
   .gitIcon {
-    width: 1.8rem;
-    min-width: 1.8rem;
-    max-width: 1.8rem;
+    width: 2rem;
+    min-width: 2rem;
+    max-width: 2rem;
     height: auto;
     aspect-ratio: 98 / 96;
     flex-shrink: 0;
+
+    @include media-max("sp") {
+      width: 1.8rem;
+      min-width: 1.8rem;
+      max-width: 1.8rem;
+    }
 
     a {
       display: block;
@@ -104,19 +118,23 @@
             fill: #fff;
           }
         }
+
+        &:active {
+          transform: scale(0.93);
+        }
       }
     }
   }
 
   .tagList {
-    margin-top: 1rem;
+    margin-top: 1.4rem;
     display: flex;
     gap: 0.8rem;
     flex-wrap: wrap;
   }
 
   .date {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     letter-spacing: 0.1em;
 
     margin-top: 0.8rem;

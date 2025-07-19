@@ -8,24 +8,9 @@
   }
 
   .tagText {
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--color-white);
     letter-spacing: 0.05em;
     font-family: var(--font-en);
   }
 }
-
-// @layer utils {
-//   .tag {
-//     &.isWhite {
-//       background-color: var(--color-white);background-color
-//     }
-//   }
-
-//   .tagText {
-//     .isWhite & {
-//       font-weight: 500;font-weightfont-weight
-//       color: var(--color-black);colorcolor
-//     }
-//   }
-// }
