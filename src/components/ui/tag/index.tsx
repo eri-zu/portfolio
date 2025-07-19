@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 import style from "./index.module.scss";
 
 import type React from "react";
@@ -11,12 +9,7 @@ type Props = {
 
 export const Tag: React.FC<Props> = ({ children }) => {
   return (
-    <div
-      className={classNames([
-        style.tag,
-        (children === "Next.js" || children === "TypeScript") && style.isWhite,
-      ])}
-    >
+    <div className={style.tag}>
       <span className={style.tagText}>{children}</span>
     </div>
   );
