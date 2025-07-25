@@ -1,10 +1,8 @@
-import classNames from "classnames";
 import Link from "next/link";
-
-import style from "./index.module.scss";
 
 import type { ReactNode } from "react";
 import type React from "react";
+
 type Props = {
   children: ReactNode;
   subLayer?: boolean;
@@ -21,7 +19,7 @@ export const Button: React.FC<Props> = ({
   return (
     <Link
       href={href}
-      className={classNames([style.button, subLayer && style["--subLayer"]])}
+      className="uppercase block text-[var(--color-white)] border border-[var(--color-white)] text-[1.4rem] rounded-full px-8 pt-4 pb-4 tracking-wider bg-white/15 cursor-pointer whitespace-nowrap button-glow "
       onClick={(e) => {
         e.preventDefault();
         if (onClick) onClick();

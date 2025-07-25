@@ -2,7 +2,6 @@
 import gsap from "gsap";
 import { useState, useEffect } from "react";
 
-import style from "./index.module.scss";
 import { AnimationSetShow } from "../../../utils/animation";
 import { TitleArea } from "../../components/layouts/titleArea";
 import { TitleAreaData } from "../../constants/titleAreaData";
@@ -32,9 +31,9 @@ export const Index: React.FC = () => {
   }, []);
 
   return (
-    <div className={style.wrap}>
-      <div className={style.kv}>
-        <div className={style.kvInner}>
+    <div className="w-full h-full fixed top-0 left-0">
+      <div className="absolute left-1/2 top-[calc(50%+12.5vh)] -translate-x-1/2 -translate-y-1/2 z-1">
+        <div>
           <TitleArea data={TitleAreaData[0]} isShow={isShow}></TitleArea>
         </div>
       </div>

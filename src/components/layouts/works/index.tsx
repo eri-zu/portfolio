@@ -3,7 +3,6 @@
 import gsap from "gsap";
 import { useLayoutEffect, useRef, useState } from "react";
 
-import style from "./index.module.scss";
 import { AnimationSetShow } from "../../../../utils/animation";
 import { Card } from "../../ui/card";
 import { TitleArea } from "../titleArea";
@@ -40,19 +39,23 @@ export const Works: React.FC<Props> = ({ data, worksData }) => {
   }, []);
 
   return (
-    <div className={style.wrap}>
-      <div className={style.inner}>
+    <div className="pt-[18rem] md:pt-[20.3rem] pb-[15rem] relative z-10">
+      {/* inner */}
+      <div className="max-w-[108rem+4rem+4rem] mx-auto px-[2rem] md:px-[4rem]">
         <TitleArea data={data} isShow={isShow} subLayer={true}></TitleArea>
 
         <div
-          className={style.contents}
+          className="relative mt-[6rem] sm:mt-[10rem]"
           style={{ opacity: 0.001 }}
           ref={contentsRef}
         >
-          <ul className={style.list}>
+          <ul className="flex flex-wrap gap-y-[3rem] gap-x-[2rem] md:gap-[6rem]">
             {worksData.map((el, i) => {
               return (
-                <li className={style.item} key={`${i}`}>
+                <li
+                  className="w-[calc(100%/2-2rem/2)] md:w-[calc(100%/3-6rem*2/3)]"
+                  key={`${i}`}
+                >
                   <Card data={el}></Card>
                 </li>
               );

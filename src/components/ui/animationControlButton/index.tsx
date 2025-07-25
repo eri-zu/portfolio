@@ -1,6 +1,5 @@
 "use client";
 
-import style from "./index.module.scss";
 import { useAnimationStore } from "../../../stores/animationStore";
 
 import type React from "react";
@@ -14,8 +13,13 @@ export const AnimationControlButton: React.FC = () => {
   };
 
   return (
-    <button type="button" className={style.button} onClick={onClick}>
+    <button
+      type="button"
+      className="display w-[4rem] h-[4rem] fixed top-[2rem] right-[2rem] border border-[var(--color-white)] bg-white/15 rounded-full z-[100] button-glow-animation-control"
+      onClick={onClick}
+    >
       <svg
+        className="w-full h-full overflow-visible"
         viewBox="0 0 50 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-black: #000;
+    --color-white: #fff;
+    --color-gray: #ccc;
+    --color-primary: #00ff00;
+    --color-secondary: #ff0000;
+    --color-accent: #0000ff;
+
+    --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --ease-in: cubic-bezier(0.42, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.58, 1);
+    --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+    --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+    --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+    --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+    --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+    --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+    --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    --ease-in-back: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  html {
+    font-family: var(--font-en), sans-serif;
+    font-size: calc(10 / 760 * 100vh);
+    background-color: var(--color-black);
+    color: var(--color-white);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    height: 100%;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  ::selection,
+  ::-moz-selection {
+    background-color: #fff;
+    color: #000;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  input,
+  button,
+  select,
+  textarea {
+    resize: none;
+    appearance: none;
+    /* border: none; */
+    border-radius: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0;
+  }
+
+  button {
+    cursor: pointer;
+    display: block;
+  }
+
+  * {
+    outline-offset: 0.4rem;
+  }
+}
+
+@layer utilities {
+  /* グロウボタン */
+  .button-glow {
+    position: relative;
+  }
+
+  .button-glow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-white);
+    border-radius: 999px;
+    box-shadow: 0 0 3rem var(--color-white);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  @media (hover: hover) {
+    .button-glow {
+      transition: all 0.4s var(--ease-out-quart) 0s;
+    }
+
+    .button-glow::before {
+      transition: all 0.2s var(--ease-out-quart) 0s;
+    }
+
+    .button-glow:hover {
+      background-color: var(--color-white);
+      color: #000;
+    }
+
+    .button-glow:hover::before {
+      opacity: 0.7;
+    }
+
+    .button-glow:active {
+      transform: scale(0.93);
+    }
+  }
+
+  /* アニメーションコントロールボタン */
+  .button-glow-animation-control {
+    transition:
+      box-shadow 0.2s var(--ease-out-quart) 0s,
+      background-color 0.4s var(--ease-out-quart) 0s,
+      transform 0.4s var(--ease-out-quart) 0s;
+  }
+
+  .button-glow-animation-control svg rect,
+  .button-glow-animation-control svg path {
+    transition: all 0.4s var(--ease-out-quart) 0s;
+    fill: var(--color-white);
+  }
+
+  @media (hover: hover) {
+    .button-glow-animation-control:hover {
+      background-color: var(--color-white);
+      box-shadow: 0 0 2rem #fff;
+    }
+
+    .button-glow-animation-control:hover rect,
+    .button-glow-animation-control:hover path {
+      fill: var(--color-black);
+    }
+
+    .button-glow-animation-control:active {
+      transform: scale(0.93);
+    }
+  }
+
+  /* カード */
+  .hover-card {
+    border: 1px solid rgba(255, 255, 255, 0);
+    transition: border-color 0.6s var(--ease-out-quint) 0s;
+  }
+
+  .hover-card img {
+    will-change: transform;
+    transition: transform 0.6s var(--ease-out-quint) 0s;
+  }
+
+  .hover-card .hover-card-cover {
+    opacity: 0;
+  }
+
+  @media (hover: hover) {
+    .hover-card:hover {
+      border-color: var(--color-white);
+    }
+
+    .hover-card:hover .hover-card-cover {
+      animation: flash 1.2s var(--ease-out-expo) 0s 1 normal;
+    }
+
+    .hover-card:hover img {
+      transform: scale(1.03);
+    }
+  }
+
+  /* giticon */
+  .hover-giticon {
+    transition: all 0.2s var(--ease-out-quart) 0s;
+  }
+
+  .hover-giticon path {
+    fill: rgba(255, 255, 255, 0.7);
+    transition: all 0.2s var(--ease-out-quart) 0s;
+  }
+
+  @media (hover: hover) {
+    .hover-giticon:hover {
+      box-shadow: 0 0 2rem #fff;
+    }
+
+    .hover-giticon:hover path {
+      fill: #fff;
+    }
+
+    .hover-giticon:active {
+      transform: scale(0.93);
+    }
+  }
+}
+
+/* flashアニメーションの定義 */
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

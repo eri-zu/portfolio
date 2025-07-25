@@ -1,9 +1,8 @@
 "use client";
-import classNames from "classnames";
+
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
-import style from "./index.module.scss";
 import { Navigation } from "../navigation";
 
 import type { TitleAreaType } from "../../../types/titleAreaType";
@@ -46,10 +45,11 @@ export const TitleArea: React.FC<Props> = ({ data, isShow, subLayer }) => {
   }, [isShow]);
 
   return (
-    <div className={style.textArea}>
-      <div className={style.intro}>
+    <div>
+      <div className="text-center">
+        {/* タイトル */}
         <h1
-          className={classNames([style.title, subLayer && style["--subLayer"]])}
+          className="font-en2 text-[2.4rem] font-semibold tracking-widest"
           ref={(el) => {
             setRefs(el, 0);
           }}
@@ -57,8 +57,10 @@ export const TitleArea: React.FC<Props> = ({ data, isShow, subLayer }) => {
         >
           {data.title}
         </h1>
+
+        {/* 説明 */}
         <p
-          className={classNames([style.lead, subLayer && style["--subLayer"]])}
+          className="mt-[2rem] text-[1.6rem] leading-[1.5] md:leading-[2] tracking-wider font-light"
           ref={(el) => {
             setRefs(el, 1);
           }}
@@ -67,8 +69,9 @@ export const TitleArea: React.FC<Props> = ({ data, isShow, subLayer }) => {
         ></p>
       </div>
 
+      {/* ナビゲーション */}
       <div
-        className={classNames([style.navArea, subLayer && style["--subLayer"]])}
+        className="mt-16"
         ref={(el) => {
           setRefs(el, 2);
         }}

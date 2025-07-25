@@ -1,8 +1,13 @@
 export default {
   plugins: {
-    'postcss-sort-media-queries': {
-      sort: 'mobile-first'
-    },
-    'autoprefixer': {}
-  }
+    "@tailwindcss/postcss": {},
+    ...(process.env.NODE_ENV === "production"
+      ? {
+          autoprefixer: {},
+          "postcss-sort-media-queries": {
+            sort: "mobile-first",
+          },
+        }
+      : {}),
+  },
 };

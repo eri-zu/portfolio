@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 
-import style from "./index.module.scss";
 import { AnimationHide } from "../../../../utils/animation";
 import { useGLStore } from "../../../stores/glStore";
 import { Button } from "../../ui/button";
@@ -25,11 +24,11 @@ export const Navigation: React.FC<Props> = ({ data, subLayer }) => {
   };
 
   return (
-    <nav className={style.nav}>
-      <ul className={style.list}>
+    <nav>
+      <ul className="flex items-center justify-center gap-[2.4rem]">
         {data.map((el, i) => {
           return (
-            <li className={style.item} key={`${i}`}>
+            <li key={`${i}`}>
               <Button
                 href={el.href}
                 subLayer={subLayer}
