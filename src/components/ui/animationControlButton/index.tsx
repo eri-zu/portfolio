@@ -1,5 +1,9 @@
 "use client";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
 import { useAnimationStore } from "../../../stores/animationStore";
 
 import type React from "react";
@@ -7,16 +11,27 @@ import type React from "react";
 export const AnimationControlButton: React.FC = () => {
   const isAnimation = useAnimationStore((s) => s.isAnimation);
   const setIsAnimation = useAnimationStore((s) => s.setIsAnimation);
-
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const onClick = () => {
     setIsAnimation(!isAnimation);
   };
+
+  useGSAP(() => {
+    gsap.to(buttonRef.current, {
+      opacity: 1,
+      duration: 1.0,
+      ease: "power2.inOut",
+      delay: 0.1 * 4,
+    });
+  });
 
   return (
     <button
       type="button"
       className="display w-[4rem] h-[4rem] fixed top-[2rem] right-[2rem] border border-[var(--color-white)] bg-white/15 rounded-full z-[100] button-glow-animation-control"
       onClick={onClick}
+      ref={buttonRef}
+      style={{ opacity: 0.001 }}
     >
       <svg
         className="w-full h-full overflow-visible"
